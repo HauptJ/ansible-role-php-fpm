@@ -50,6 +50,7 @@
     dest: /etc/php-fpm.d
     state: link
 
+# Broken nginx user not found
 - name: create php-fpm directory
   file:
     path: /var/log/php-fpm
