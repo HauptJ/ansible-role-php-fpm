@@ -50,7 +50,6 @@
     dest: /etc/php-fpm.d
     state: link
 
-# Broken nginx user not found
 - name: create php-fpm directory
   file:
     path: /var/log/php-fpm
@@ -71,17 +70,17 @@
     - /var/lib/php/wsdlcache
     - /var/lib/php/opcache
 
-#- name: set php-fpm user to nginx
-#  lineinfile:
-#    path: /etc/php-fpm.d/www.conf
-#    regexp: '^user ='
-#    line: 'user = nginx'
+- name: set php-fpm user to nginx
+  lineinfile:
+    path: /etc/php-fpm.d/www.conf
+    regexp: '^user ='
+    line: 'user = nginx'
 
-#- name: set php-fpm group to nginx
-#  lineinfile:
-#    path: /etc/php-fpm.d/www.conf
-#    regexp: '^group ='
-#    line: 'group = nginx'
+- name: set php-fpm group to nginx
+  lineinfile:
+    path: /etc/php-fpm.d/www.conf
+    regexp: '^group ='
+    line: 'group = nginx'
 
 #- name: set php-fpm error log location
 #  lineinfile:
@@ -89,12 +88,12 @@
 #    regexp: '^/var/opt/remi/php70/log/php-fpm/www-error.log'
 #    line: '/var/log/php-fpm/www-error.log'
 
-- name: "replace values in /etc/php-fpm.d/www.conf {{ item }}"
+- name: "replace values in /etc/php-fpm.d/www.conf"
   shell: "{{ item }}"
   with_items:
-    - "sed -i -e 's/user = apache/user = nginx/' /etc/php-fpm.d/www.conf"
-    - "sed -i -e 's/group = apache/group = nginx/' /etc/php-fpm.d/www.conf"
     - "sed -i -e 's|/var/opt/remi/php71/log/php-fpm/www-error.log|/var/log/php-fpm/www-error.log|' /etc/php-fpm.d/www.conf"
     - "sed -i -e 's|/var/opt/remi/php71/lib/php/session|/var/lib/php/session|' /etc/php-fpm.d/www.conf"
     - "sed -i -e 's|/var/opt/remi/php71/lib/php/wsdlcache|/var/lib/php/wsdlcache|' /etc/php-fpm.d/www.conf"
     - "sed -i -e 's|/var/opt/remi/php71/lib/php/opcache|/var/lib/php/opcache|' /etc/php-fpm.d/www.conf"
+  #  - "sed -i -e 's/user = apache/user = nginx/' /etc/php-fpm.d/www.conf"
+  #  - "sed -i -e 's/group = apache/group = nginx/' /etc/php-fpm.d/www.conf"
