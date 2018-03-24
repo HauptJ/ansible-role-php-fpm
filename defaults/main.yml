@@ -1,1 +1,3 @@
 # Default variable settings
+
+resty_default_web_dir: /usr/local/openresty/nginx/html/default/
