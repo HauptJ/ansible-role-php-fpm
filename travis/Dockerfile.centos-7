@@ -17,6 +17,10 @@ RUN yum -y install \
   ansible \
   sudo
 
+# Install Dependencies from Ansible Galaxy
+RUN ansible-galaxy install geerlingguy.repo-epel
+RUN ansible-galaxy install geerlingguy.repo-remi
+
 RUN sed -i -e 's/^\(Defaults\s*requiretty\)/#--- \1/'  /etc/sudoers
 
 RUN echo -e '[local]\nlocalhost ansible_connection=local' > /etc/ansible/hosts
