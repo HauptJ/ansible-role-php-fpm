@@ -4,4 +4,6 @@
   become: yes
 
   roles:
+    - geerlingguy.repo-epel
+    - geerlingguy.repo-remi
     - test_role
