@@ -26,6 +26,11 @@
     creates: /etc/opt/remi/php71/php-fpm.d/www.disabled
   notify: restart php71-php-fpm
 
+- name: Copy redis.ini configuration
+  template:
+    src: 50-redis.ini
+    dest: /etc/opt/remi/php71/php.d/
+
 - name: Copy php71-php-fpm configuration
   template:
     src: wordpress.conf
