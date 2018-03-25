@@ -3,3 +3,4 @@
   service:
     name: php71-php-fpm
     state: restarted
+  when: php_ci_test == false

@@ -1,3 +1,6 @@
 # Default variable settings
 
+##### CI Test #####
+php_ci_test: true
+
 resty_default_web_dir: /usr/local/openresty/nginx/html/default/
