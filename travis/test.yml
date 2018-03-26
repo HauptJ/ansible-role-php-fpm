@@ -1,9 +1,0 @@
----
-  # Modified from source: https://github.com/drhelius/travis-ansible-demo/blob/master/travis/test.yml
-- hosts: all
-  become: yes
-
-  roles:
-    - geerlingguy.repo-epel
-    - geerlingguy.repo-remi
-    - test_role
