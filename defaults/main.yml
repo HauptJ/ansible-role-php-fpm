@@ -1,6 +1,19 @@
-# Default variable settings
+# @Author: Haupt Joshua
+# @Date:   26-Mar-2018
+# @Email:  josh@hauptj.com
+# @Filename: main.yml
+# @Last modified by:   Haupt Joshua
+# @Last modified time: 08-Apr-2018
+
+# Default variable settings for PHP
+
+# PHP Socket
+php_sock: /var/run/wordpress.sock
 
 ##### CI Test #####
 php_ci_test: true
+
+# OpenResty web service user and group
+resty_web_user: nginx
 
 resty_default_web_dir: /usr/local/openresty/nginx/html/default
