@@ -1,4 +1,6 @@
 ---
+  # Tasks to install and configure PHP 7.1 for WordPress
+
 - name: install php7 and modules
   yum:
     name: "{{ item }}"
@@ -19,11 +21,18 @@
     - php71-php-xml
 
 - name: Disable default pool
-  command: mv /etc/php71-php-fpm.d/www.conf /etc/php71-php-fpm.d/www.disabled creates=/etc/php71-php-fpm.d/www.disabled
+  command: mv /etc/opt/remi/php71/php-fpm.d/www.conf /etc/opt/remi/php71/php-fpm.d/www.disabled
+  args:
+    creates: /etc/opt/remi/php71/php-fpm.d/www.disabled
   notify: restart php71-php-fpm
+
+- name: Copy redis.ini configuration
+  template:
+    src: 50-redis.ini
+    dest: /etc/opt/remi/php71/php.d/
 
 - name: Copy php71-php-fpm configuration
   template:
     src: wordpress.conf
-    dest: /etc/php71-php-fpm.d/
+    dest: /etc/opt/remi/php71/php-fpm.d/
   notify: restart php71-php-fpm
