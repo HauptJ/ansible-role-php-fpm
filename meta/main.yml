@@ -21,5 +21,5 @@ galaxy_info:
     - redis
     - wordpress
 dependencies:
-  - { role: geerlingguy.repo-epel }
-  - { role: geerlingguy.repo-remi }
+  - role: geerlingguy.repo-epel
+  - role: geerlingguy.repo-remi
