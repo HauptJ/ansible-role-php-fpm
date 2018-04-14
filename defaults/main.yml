@@ -11,6 +11,7 @@
 php_sock: /var/run/wordpress.sock
 
 ##### CI Test #####
+# CI test, should only be set to true for testing
 php_ci_test: true
 
 # OpenResty web service user and group

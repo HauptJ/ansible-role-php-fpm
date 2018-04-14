@@ -22,4 +22,6 @@ galaxy_info:
     - wordpress
 dependencies:
   - role: geerlingguy.repo-epel
+    when: php_ci_test == true
   - role: geerlingguy.repo-remi
+    when: php_ci_test == true
