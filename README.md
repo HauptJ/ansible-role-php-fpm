@@ -4,6 +4,12 @@ This role is intended to be used with [WordPress](https://github.com/HauptJ/ansi
 
 [![Build Status](https://travis-ci.org/HauptJ/ansible-role-php-fpm.svg?branch=master)](https://travis-ci.org/HauptJ/ansible-role-php-fpm)
 
+## Requirements
+- Ansible 2.3+
+- CentOS 7
+- Extra Packages for Enterprise Linux (EPEL) repository
+- Remi's RPM (REMI) repository
+
 ## Installation
 1. Fork this repository
 2. git submodule add <git host> roles/ansible-role-php-fpm
