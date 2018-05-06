@@ -10,10 +10,11 @@
 # PHP Socket
 php_sock: /var/run/wordpress.sock
 
-##### CI Test #####
-php_ci_test: true
-
 # OpenResty web service user and group
 resty_web_user: nginx
 
 resty_default_web_dir: /usr/local/openresty/nginx/html/default
+
+##### CI Test #####
+# CI test, should only be set to true for testing
+php_ci_test: true
