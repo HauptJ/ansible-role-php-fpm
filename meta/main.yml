@@ -20,8 +20,3 @@ galaxy_info:
     - php
     - redis
     - wordpress
-dependencies:
-  - role: geerlingguy.repo-epel
-    when: php_ci_test == true
-  - role: geerlingguy.repo-remi
-    when: php_ci_test == true
