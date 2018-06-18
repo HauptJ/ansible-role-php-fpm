@@ -35,4 +35,16 @@
   template:
     src: wordpress.conf
     dest: /etc/opt/remi/php71/php-fpm.d/
+
+- name: php.ini - Change max upload size to {{ php_upload_max_filesize }}
+  replace:
+    dest: /etc/opt/remi/php71/php.ini
+    regexp: '^upload_max_filesize = .*$'
+    replace: 'upload_max_filesize = {{ php_upload_max_filesize }}'
+
+- name: php.ini - Change memory limit to {{ php_memory_limit }}
+  replace:
+    dest: /etc/opt/remi/php71/php.ini
+    regexp: '^memory_limit = .*$'
+    replace: 'memory_limit = {{ php_memory_limit }}'
   notify: restart php71-php-fpm

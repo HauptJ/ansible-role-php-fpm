@@ -10,6 +10,9 @@
 # PHP Socket
 php_sock: /var/run/wordpress.sock
 
+php_upload_max_filesize: "15M"
+php_memory_limit: "512M"
+
 # OpenResty web service user and group
 resty_web_user: nginx
 
