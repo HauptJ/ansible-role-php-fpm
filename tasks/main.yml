@@ -47,4 +47,11 @@
     dest: /etc/opt/remi/php71/php.ini
     regexp: '^memory_limit = .*$'
     replace: 'memory_limit = {{ php_memory_limit }}'
+
+- name: Start php71-php-fpm Service
+  service:
+    name: php71-php-fpm
+    state: started
+    enabled: yes
   notify: restart php71-php-fpm
+  ignore_errors: true
