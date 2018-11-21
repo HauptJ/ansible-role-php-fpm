@@ -3,22 +3,21 @@
 
 - name: install php7 and modules
   yum:
-    name: "{{ item }}"
+    name:
+      - php71
+      - php71-php-fpm
+      - php71-php-gd
+      - php71-php-json
+      - php71-php-mbstring
+      - php71-php-mysqlnd
+      - php71-php-pdo
+      - php71-php-pecl-apcu
+      - php71-php-pecl-apcu-bc
+      - php71-php-pecl-igbinary
+      - php71-php-pecl-imagick
+      - php71-php-pecl-redis # Redis
+      - php71-php-xml
     state: latest
-  with_items:
-    - php71
-    - php71-php-fpm
-    - php71-php-gd
-    - php71-php-json
-    - php71-php-mbstring
-    - php71-php-mysqlnd
-    - php71-php-pdo
-    - php71-php-pecl-apcu
-    - php71-php-pecl-apcu-bc
-    - php71-php-pecl-igbinary
-    - php71-php-pecl-imagick
-    - php71-php-pecl-redis # Redis
-    - php71-php-xml
 
 - name: Disable default pool
   command: mv /etc/opt/remi/php71/php-fpm.d/www.conf /etc/opt/remi/php71/php-fpm.d/www.disabled
