@@ -1,14 +1,11 @@
-# @Author: Haupt Joshua
-# @Date:   26-Mar-2018
-# @Email:  josh@hauptj.com
-# @Filename: main.yml
-# @Last modified by:   Haupt Joshua
-# @Last modified time: 08-Apr-2018
 
 # Default variable settings for PHP
 
 # PHP Socket
 php_sock: /var/run/wordpress.sock
+
+php_upload_max_filesize: "15M"
+php_memory_limit: "512M"
 
 # OpenResty web service user and group
 resty_web_user: nginx
